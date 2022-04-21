@@ -1069,6 +1069,7 @@ func (o *Object) Hash(ctx context.Context, t hash.Type) (string, error) {
 	if t != hash.MD5 {
 		return "", hash.ErrUnsupported
 	}
+	/* Comment out the largefile checks
 	isDynamicLargeObject, err := o.isDynamicLargeObject(ctx)
 	if err != nil {
 		return "", err
@@ -1081,6 +1082,7 @@ func (o *Object) Hash(ctx context.Context, t hash.Type) (string, error) {
 		fs.Debugf(o, "Returning empty Md5sum for swift large object")
 		return "", nil
 	}
+	end of largefile check comment-out */
 	return strings.ToLower(o.md5), nil
 }
 
